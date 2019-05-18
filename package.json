@@ -1,6 +1,6 @@
 {
   "name": "@studtool/editor",
-  "version": "v0.0.1",
+  "version": "0.0.2",
   "description": "Studtool frontend",
   "main": "public/src/script.js",
   "scripts": {
