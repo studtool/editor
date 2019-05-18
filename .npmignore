@@ -4,5 +4,6 @@ webpack/
 .npmrc
 .travis.yml
 .webpack.config.js
-.tsconfig.json
-.tslint.json
+tsconfig.json
+tslint.json
+.idea/
