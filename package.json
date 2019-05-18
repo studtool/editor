@@ -7,8 +7,8 @@
     "start": "node server/index.js",
     "build": "webpack --mode production",
     "build-dev": "webpack --mode development --watch",
-    "lint": "eslint src",
-    "lint-fix": "eslint --fix src",
+    "lint": "tslint --project ./tsconfig.json",
+    "lint-fix": "tslint --fix --project ./tsconfig.json",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -24,7 +24,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm test"
+      "pre-push": "npm run lint-fix"
     }
   },
   "dependencies": {
