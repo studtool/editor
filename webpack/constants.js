@@ -6,9 +6,11 @@ const MODE_ENUM = {
 	DEVELOPMENT: 'development',
 };
 
+const IS_PRODUCTION = MODE === MODE_ENUM.PRODUCTION;
+
 const ROOT_PATH = path.resolve(__dirname, '..');
 const SRC_PATH = path.join(ROOT_PATH, 'src');
-const BUILD_PATH = 'dist';
+const BUILD_PATH = path.join(ROOT_PATH, 'dist');
 
 
 module.exports = {
@@ -17,4 +19,5 @@ module.exports = {
 	ROOT_PATH,
 	SRC_PATH,
 	BUILD_PATH,
+	IS_PRODUCTION,
 };
