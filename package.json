@@ -3,16 +3,19 @@
   "version": "0.0.4-basic-1",
   "description": "Studtool frontend",
   "main": "dist/editor.js",
+  "types": "dist/editor.d.ts",
   "scripts": {
-    "start": "node server/index.js",
-    "build:dev": "MODE=development webpack",
-    "build:prod": "npm run css && MODE=production webpack",
+    "start": "npm run generate:css:watch && npm run storybook",
+    "build:dev": "npm run generate:css && MODE=development webpack",
+    "build:prod": "MODE=production webpack",
+    "generate:types": "./node_modules/.bin/dts-bundle-generator src/index.tsx -o dist/editor.d.ts --no-check",
+    "generate:css": "tcm src/",
+    "generate:css:watch": "tcm src/ -w &",
     "lint": "tslint --project ./tsconfig.json",
     "lint-fix": "tslint --fix --project ./tsconfig.json",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "css": "tcm src/",
     "prepublish": "npm run lint && npm run build:prod"
   },
   "repository": {
@@ -30,7 +33,16 @@
     }
   },
   "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "homepage": "https://github.com/studtool/frontend#readme",
+  "devDependencies": {
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
     "@storybook/cli": "^5.0.11",
+    "@storybook/react": "^5.0.11",
     "@types/classnames": "^2.2.7",
     "@types/node": "^12.0.2",
     "@types/react": "^16.8.17",
@@ -39,24 +51,17 @@
     "awesome-typescript-loader": "^5.2.1",
     "classnames": "^2.2.6",
     "css-loader": "^2.1.1",
+    "dts-bundle": "^0.7.3",
+    "dts-bundle-generator": "^3.1.0",
     "husky": "^2.3.0",
     "linaria": "^1.3.1",
     "mini-css-extract-plugin": "^0.6.0",
     "path": "^0.12.7",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "tslint": "^5.16.0",
     "tslint-loader": "^3.5.4",
     "tslint-react": "^4.0.0",
     "typed-css-modules": "^0.4.2",
-    "typescript": "^3.4.5"
-  },
-  "homepage": "https://github.com/studtool/frontend#readme",
-  "devDependencies": {
-    "@storybook/addon-actions": "^5.0.11",
-    "@storybook/addon-links": "^5.0.11",
-    "@storybook/addons": "^5.0.11",
-    "@storybook/react": "^5.0.11",
+    "typescript": "^3.4.5",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.1.0"
