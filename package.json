@@ -1,6 +1,6 @@
 {
   "name": "@studtool/editor",
-  "version": "0.0.4-basic-1",
+  "version": "0.0.4",
   "description": "Studtool frontend",
   "main": "dist/editor.js",
   "types": "dist/editor.d.ts",
