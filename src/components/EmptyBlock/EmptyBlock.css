@@ -1,0 +1,4 @@
+.focused[contenteditable]:empty:before {
+    content: attr(placeholder);
+    display: block;
+}

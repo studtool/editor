@@ -11,8 +11,7 @@
       "arrow-call-signature",
       "arrow-parameter",
       "property-declaration",
-      "member-variable-declaration",
-      "object-destructuring"
+      "member-variable-declaration"
     ],
 
     "only-arrow-functions": false,
@@ -61,7 +60,8 @@
       "ignore-bound-class-methods"
     ],
     "no-implicit-dependencies": false,
-    "no-submodule-imports": false
+    "no-submodule-imports": false,
+    "no-console": false
   },
   "rulesDirectory": []
 }
