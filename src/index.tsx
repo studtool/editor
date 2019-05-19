@@ -1,3 +1,4 @@
+import {App} from '@/components/App/App';
 import {IApi} from '@/interfaces/IApi';
 import {BlocksArray, IDocument} from '@/interfaces/IDocument';
 import {Injector} from '@/lib/Injector';
@@ -15,6 +16,7 @@ export interface IEditorOwnProps {
 export interface IEditorState {
     blocks?: BlocksArray;
 }
+
 export type IEditorProps = IApi & IEditorOwnProps;
 
 export class Editor extends React.Component<IEditorProps, IEditorState> {
@@ -26,5 +28,9 @@ export class Editor extends React.Component<IEditorProps, IEditorState> {
         };
 
         Injector.setAll(this.props.deps);
+    }
+
+    public render () {
+        return <App/>;
     }
 }

@@ -2,18 +2,17 @@
   "name": "@studtool/editor",
   "version": "0.0.4",
   "description": "Studtool frontend",
-  "main": "public/src/script.js",
+  "main": "dist/editor.js",
   "scripts": {
     "start": "node server/index.js",
-    "build": "webpack --mode production",
     "build:dev": "MODE=development webpack",
-    "build:prod": "MODE=production webpack",
+    "build:prod": "npm run css && MODE=production webpack",
     "lint": "tslint --project ./tsconfig.json",
     "lint-fix": "tslint --fix --project ./tsconfig.json",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "css": "",
+    "css": "tcm src/",
     "prepublish": "npm run lint && npm run build:prod"
   },
   "repository": {

@@ -1,7 +1,9 @@
 import * as React from 'react';
+import styles from './App.css';
 
 export class App extends React.Component {
     public render (): JSX.Element {
-        return <div>Hello editor</div>;
+
+        return <div className={styles.app}>Hello editor</div>;
     }
 }

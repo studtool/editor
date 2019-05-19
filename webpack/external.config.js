@@ -3,7 +3,7 @@ const base = require('./base.config');
 
 const output = {
 	path: CONSTANTS.BUILD_PATH,
-	filename: 'index.js',
+	filename: 'editor.js',
 };
 
 const externals = [
