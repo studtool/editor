@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run generate:css:watch && npm run storybook",
     "build:dev": "npm run generate:css && MODE=development webpack",
-    "build:prod": "MODE=production webpack",
+    "build:prod": "npm run generate:types && npm run generate:css && MODE=production webpack",
     "generate:types": "./node_modules/.bin/dts-bundle-generator src/index.tsx -o dist/editor.d.ts --no-check",
     "generate:css": "tcm src/",
     "generate:css:watch": "tcm src/ -w &",
