@@ -14,6 +14,7 @@
 Собирает итоговый бандл Редактора (css + js). Используем css модули => есть отдельны бандл для стилей
 
     npm run build:prod 
+    npm run build:prod:watch
 
 Генерируем типы(.css.d.ts) для стилей, чтобы использовать в TS  
 
@@ -41,3 +42,21 @@
     npm run prepublish
 
    
+###Дебаг 
+Пишем в редакторе
+    
+    npm link
+    
+В проекте, в котором разрабатываем
+
+    npm link @studtool/editor
+    
+Потом в редакторе, чтобы смотреть за изменениями собираем c watch
+
+    npm run build:prod:watch
+    
+    
+Чтобы отключить симлинк пишем там, где разрабатываем
+
+    npm unlink @studtool/editor
+
