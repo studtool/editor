@@ -7,6 +7,7 @@
     "start": "npm run generate:css:watch && npm run storybook",
     "build:dev": "npm run generate:css && MODE=development webpack",
     "build:prod": "npm run generate:css && MODE=production webpack",
+    "build:prod:watch": "npm run generate:css:watch && MODE=production webpack --watch",
     "generate:css": "tcm src/",
     "generate:css:watch": "tcm src/ -w &",
     "lint": "tslint --project ./tsconfig.json",

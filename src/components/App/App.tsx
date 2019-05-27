@@ -4,6 +4,6 @@ import styles from './App.css';
 export class App extends React.Component {
     public render (): JSX.Element {
 
-        return <div className={styles.app}>Hello editor</div>;
+        return <div className={styles.app}>Hello editor asasdsd</div>;
     }
 }
