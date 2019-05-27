@@ -3,13 +3,15 @@ const base = require('./base.config');
 
 const output = {
 	path: CONSTANTS.BUILD_PATH,
-	filename: 'index.js',
+	filename: 'editor.js',
+	library: 'editor',
+	libraryTarget: 'commonjs2' // очень важно указать таргет
 };
 
-const externals = [
-	'react',
-	'react-dom',
-];
+// какие либы мы не добавляем в бандл
+const externals = {
+	'react': 'commonjs react'
+};
 
 const devtool = false;
 
