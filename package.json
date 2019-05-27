@@ -3,12 +3,10 @@
   "version": "0.0.6",
   "description": "Studtool frontend",
   "main": "dist/editor.js",
-  "types": "dist/editor.d.ts",
   "scripts": {
     "start": "npm run generate:css:watch && npm run storybook",
     "build:dev": "npm run generate:css && MODE=development webpack",
-    "build:prod": "npm run generate:types && npm run generate:css && MODE=production webpack",
-    "generate:types": "./node_modules/.bin/dts-bundle-generator src/index.tsx -o dist/editor.d.ts --no-check",
+    "build:prod": "npm run generate:css && MODE=production webpack",
     "generate:css": "tcm src/",
     "generate:css:watch": "tcm src/ -w &",
     "lint": "tslint --project ./tsconfig.json",
@@ -32,7 +30,7 @@
       "pre-push": "npm run lint-fix"
     }
   },
-  "dependencies": {
+  "peerDependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
@@ -62,6 +60,7 @@
     "tslint-react": "^4.0.0",
     "typed-css-modules": "^0.4.2",
     "typescript": "^3.4.5",
+    "typescript-declaration-webpack-plugin": "^0.1.1",
     "typings-for-css-modules-loader": "^1.7.0",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.1.0"

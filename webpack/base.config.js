@@ -35,7 +35,8 @@ const moduleConfig = {
 				}
 			]
 		}
-	]
+	],
+	noParse: /react/,
 };
 
 const plugins = [
