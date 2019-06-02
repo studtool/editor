@@ -1,4 +1,5 @@
 const CONSTANTS = require('./constants');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const entry = './src/index.tsx';
 
@@ -21,8 +22,28 @@ const moduleConfig = {
 				},
 			},
 		},
-	]
+		{
+			test: /\.css$/,
+			use: [
+				MiniCssExtractPlugin.loader,
+				{
+					loader: 'css-loader',
+					options: {
+						modules: true,
+						importLoaders: 1
+					}
+				}
+			]
+		}
+	],
+	noParse: /react/,
 };
+
+const plugins = [
+	new MiniCssExtractPlugin({
+		filename: `editor.css`,
+	}),
+];
 
 const resolve = {
 	extensions: ['.tsx', '.ts', '.js'],
@@ -35,6 +56,7 @@ const config = {
 	entry,
 	module: moduleConfig,
 	resolve,
+	plugins,
 };
 
 module.exports = config;
